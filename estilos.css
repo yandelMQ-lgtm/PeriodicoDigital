@@ -734,3 +734,117 @@ footer {
   #puzzle-grid { grid-template-columns: repeat(15, 1fr); gap: 1px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
+/* ===== MENU HAMBURGUESA ===== */
+
+.menu-toggle{
+  display:none;
+  width:100%;
+  background:var(--ink);
+  color:var(--paper);
+  border:none;
+  font-size:2rem;
+  cursor:pointer;
+  padding:12px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-bar{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    padding:1rem 0;
+    animation:slideDown 0.3s ease;
+  }
+
+  .nav-bar.show{
+    display:flex;
+  }
+
+  .nav-bar .nav-sep{
+    display:none;
+  }
+
+  .nav-bar a{
+    width:100%;
+    text-align:center;
+    border-bottom:1px solid #3a3836;
+  }
+
+  .masthead-top{
+    flex-direction:column;
+    gap:8px;
+    text-align:center;
+  }
+
+  .masthead-logo::before,
+  .masthead-logo::after{
+    display:none;
+  }
+
+  .front-grid{
+    grid-template-columns:1fr;
+  }
+
+  .art-hero,
+  .art-sidebar,
+  .art-secondary{
+    grid-column:auto;
+    grid-row:auto;
+    border:none;
+  }
+
+  .art-hero .body-copy{
+    column-count:1;
+  }
+
+  .opinion-grid{
+    grid-template-columns:1fr;
+  }
+
+  .opinion-card{
+    border-right:none;
+    border-bottom:var(--rule-thin);
+  }
+
+  .puzzle-layout{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+  .cell{
+    width:24px;
+    height:24px;
+    font-size:9px;
+  }
+}
+
+/* ===== ANIMACION ===== */
+
+@keyframes slideDown{
+  from{
+    opacity:0;
+    transform:translateY(-15px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
